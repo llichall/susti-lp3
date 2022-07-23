@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrendaController;
+use App\Http\Controllers\VentaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,6 @@ Route::get('/', function () {
 
 Route::get("/prendas/registrar", [PrendaController::class, "registrar"])->name("prendas.registrar");
 Route::post("/prendas/registrar", [PrendaController::class, "registrarProcesar"])->name("prendas.registrar");
+
+Route::post("/ventas/dia", [VentaController::class, "ventasPorDia"])->name("ventas.dia");
+Route::get("/ventas/dia", [VentaController::class, "showVentas"])->name("ventas.dia");
