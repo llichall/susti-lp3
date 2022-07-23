@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PrendaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/prendas/registrar", [PrendaController::class, "registrar"])->name("prendas.registrar");
+Route::post("/prendas/registrar", [PrendaController::class, "registrarProcesar"])->name("prendas.registrar");
